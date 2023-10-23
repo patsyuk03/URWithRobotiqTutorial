@@ -5,13 +5,14 @@ from ament_index_python.packages import get_package_share_directory
 from launch.actions import IncludeLaunchDescription, TimerAction, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
+from launch.conditions import UnlessCondition
 
 
 def generate_launch_description():
     ld = LaunchDescription()
 
     ld.add_action(DeclareLaunchArgument("robot_ip", default_value="192.168.0.120"))
-    ld.add_action(DeclareLaunchArgument("use_fake_hardware", default_value="true"))
+    ld.add_action(DeclareLaunchArgument("use_fake_hardware", default_value="false"))
 
     robot_ip = LaunchConfiguration("robot_ip")
     use_fake_hardware = LaunchConfiguration("use_fake_hardware")
@@ -43,7 +44,8 @@ def generate_launch_description():
         ),
         launch_arguments={
             'robot_ip': robot_ip,
-        }.items()
+        }.items(),
+        condition=UnlessCondition(use_fake_hardware)
     ))
 
     return ld

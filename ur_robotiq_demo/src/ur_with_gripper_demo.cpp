@@ -32,7 +32,7 @@ int main(int argc, char * argv[])
     auto request = std::make_shared<gripper_srv::srv::GripperService::Request>();
 
     // Create the MoveIt Move Group Interface for xarm and gripper
-    moveit::planning_interface::MoveGroupInterface move_group(node, "ur_with_gripper");
+    moveit::planning_interface::MoveGroupInterface move_group(node, "ur_manipulator");
     move_group.setPlanningTime(10.0);
     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
     std::vector<geometry_msgs::msg::Pose> waypoints;

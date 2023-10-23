@@ -93,31 +93,31 @@ colcon build
 ros2 run moveit_setup_assistant moveit_setup_assistant
 ```
 First, select "Create New MoveIt Configuration Package" and browse the ur5e_with_robotiq_hande.xacro robot description from ur_robotiq_description package.
-<br><img src="img/1.png" alt="MSA" width="400"/>
+<br><img src="img/1.png" alt="MSA" width="400"/><br>
 Then select "Load Files".
-<br><img src="img/2.png" alt="MSA" width="400"/>
+<br><img src="img/2.png" alt="MSA" width="400"/><br>
 From the left bar choose "Self-Collisions" and press "Generate Collision Matrix". This step creates the collision matrix that lets the robot know of the possible collisions with itself, the gripper, or the table.
-<br><img src="img/3.png" alt="MSA" width="400"/>
+<br><img src="img/3.png" alt="MSA" width="400"/><br>
 From the left bar select "Planning Groups" and press "Add Planning Group". Write the Group Name, select Kinematic Solver and Group Default Planner. Press "Add Kin. Chain". 
-<br><img src="img/4.png" alt="MSA" width="400"/>
+<br><img src="img/4.png" alt="MSA" width="400"/><br>
 Choose the Base Link and the Tip Link from the robot links. In this case base_link and tool0.
-<br><img src="img/5.png" alt="MSA" width="400"/>
+<br><img src="img/5.png" alt="MSA" width="400"/><br>
 The end result should look like this:
-<br><img src="img/6.png" alt="MSA" width="400"/>
+<br><img src="img/6.png" alt="MSA" width="400"/><br>
 From the left bar select "Robot Poses" and click "Add Robot Pose". Choose the name for the pose and by dragging the trackbars create the desired pose.
-<br><img src="img/7.png" alt="MSA" width="400"/>
+<br><img src="img/7.png" alt="MSA" width="400"/><br>
 Next, we need to add the controllers. Select "ROS2 Controllers" -> "Add Controller", and enter the name of the controller. Press "Add Joints Group".
-<br><img src="img/9.png" alt="MSA" width="400"/>
+<br><img src="img/9.png" alt="MSA" width="400"/><br>
 Select "ur_manipulator" group and click "Save".
-<br><img src="img/8.png" alt="MSA" width="400"/>
+<br><img src="img/8.png" alt="MSA" width="400"/><br>
 This should be the result:
-<br><img src="img/10.png" alt="MSA" width="400"/>
+<br><img src="img/10.png" alt="MSA" width="400"/><br>
 Now do the same thing for "Moveit Controllers".
-<br><img src="img/11.png" alt="MSA" width="400"/>
+<br><img src="img/11.png" alt="MSA" width="400"/><br>
 Add the author's information.
-<br><img src="img/12.png" alt="MSA" width="400"/>
+<br><img src="img/12.png" alt="MSA" width="400"/><br>
 Finally, select "Configuration Files" from the left bar, click Browse, and select "URWithRobotiqTutorial" as the directory where to save the newly created MoveIt configuration package then add "/ur_robotiq_moveit_config". Press "Generate Package".
-<br><img src="img/14.png" alt="MSA" width="400"/>
+<br><img src="img/14.png" alt="MSA" width="400"/><br>
 
 ### 3. Modify generated package
 

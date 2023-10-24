@@ -14,10 +14,14 @@ This is a guide on how to create a custom Moveit configuration using Moveit Setu
 
 ### Clone this workspace and build
 ```bash
-mkdir colcon_ws/src
-cd colcon_ws/src
-git clone https://github.com/patsyuk03/URWithRobotiqTutorial.git
+mkdir colcon_ws
+cd colcon_ws
+mkdir src
+cd src
+git clone --recurse-submodules https://github.com/patsyuk03/URWithRobotiqTutorial.git
 cd ..
+colcon build --packages-select gripper_srv
+source install/setup.bash
 colcon build
 source install/setup.bash
 ```
@@ -53,7 +57,13 @@ In the previous step, we used the default moveit configuration which has only a 
 
 ### 1. Add table
 
-Open file ur5e_with_robotiq_hande.xacro from the ur_robotiq_description package and add there the following code:
+First lets see the robot description that we have now
+
+```bash
+ros2 launch ur_robotiq_description view_robot.launch.py
+```
+
+This robot description file does not have the table, in this case, there is always a chance that the robot will collide with the table in the real world. To avoid this we can add the table to the robot description. To do this open file ur5e_with_robotiq_hande.xacro from the ur_robotiq_description package and add there the following code:
 
 ```bash
   <!-- Add table link -->
@@ -82,9 +92,15 @@ Open file ur5e_with_robotiq_hande.xacro from the ur_robotiq_description package 
 ```
 
 Build the workspace with added changes
+
 ```bash
 cd colcon_ws
 colcon build
+```
+Check that the table was added successfully 
+
+```bash
+ros2 launch ur_robotiq_description view_robot.launch.py
 ```
 
 ### 2. Moveit Setup Assistant

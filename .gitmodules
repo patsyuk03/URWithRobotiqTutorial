@@ -1,3 +1,3 @@
 [submodule "RobotiqHandeROS2Driver"]
 	path = RobotiqHandeROS2Driver
-	url = git@github.com:patsyuk03/RobotiqHandeROS2Driver.git
+	url = https://github.com/patsyuk03/RobotiqHandeROS2Driver.git

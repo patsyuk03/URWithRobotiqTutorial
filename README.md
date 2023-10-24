@@ -14,10 +14,8 @@ This is a guide on how to create a custom Moveit configuration using Moveit Setu
 
 ### Clone this workspace and build
 ```bash
-mkdir colcon_ws
-cd colcon_ws
-mkdir src
-cd src
+mkdir -p colcon_ws/src
+cd colcon_ws/src
 git clone --recurse-submodules https://github.com/patsyuk03/URWithRobotiqTutorial.git
 cd ..
 colcon build --packages-select gripper_srv

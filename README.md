@@ -63,6 +63,9 @@ First lets see the robot description that we have now
 ros2 launch ur_robotiq_description view_robot.launch.py
 ```
 
+<br><img src="img/no_table.png" alt="No Table" width="400"/>
+
+
 This robot description file does not have the table, in this case, there is always a chance that the robot will collide with the table in the real world. To avoid this we can add the table to the robot description. To do this open file ur5e_with_robotiq_hande.xacro from the ur_robotiq_description package and add there the following code:
 
 ```bash
@@ -102,6 +105,9 @@ Check that the table was added successfully 
 ```bash
 ros2 launch ur_robotiq_description view_robot.launch.py
 ```
+
+<br><img src="img/table.png" alt="Table" width="400"/>
+
 
 ### 2. Moveit Setup Assistant
 

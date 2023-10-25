@@ -19,8 +19,6 @@ mkdir -p colcon_ws/src
 cd ~/colcon_ws/src
 git clone --recurse-submodules https://github.com/patsyuk03/URWithRobotiqTutorial.git
 cd ~/colcon_ws
-colcon build --packages-select gripper_srv
-source install/setup.bash
 colcon build
 source install/setup.bash
 ```

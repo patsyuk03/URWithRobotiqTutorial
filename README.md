@@ -161,16 +161,26 @@ joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 ```
 
-3. Save the files
-
-### 4. See the result
+3. Save the files and build the workspace:
 
 ```bash
 cd ~/colcon_ws
 colcon build
 source install/setup.bash 
+```
+
+### 4. See the result
+
+In one terminal:
+```bash
+ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5e robot_ip:=xxx.xxx.x.xxx use_fake_hardware:=true initial_joint_controller:=joint_trajectory_controller launch_rviz:=false
+```
+
+In another terminal:
+```bash
 ros2 launch ur_robotiq_moveit_config demo.launch.py
 ```
+
 <br><img src="img/15.png" alt="MSA" width="400"/>
 
 ## **Running A Sample Code**

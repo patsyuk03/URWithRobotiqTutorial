@@ -174,7 +174,7 @@ ros2 launch ur_robotiq_moveit_config demo.launch.py
 <br><img src="img/15.png" alt="MSA" width="400"/>
 
 ## **Running A Sample Code**
-### 1. Launch PnP demo
+### 1. Launch demos
 <br>**For work with fake hardware:** 
 
 In one terminal:
@@ -191,7 +191,8 @@ In one terminal:
 ```bash
 ros2 launch ur_robotiq_demo ur_with_gripper_demo.launch.py robot_ip:=xxx.xxx.x.xxx use_fake_hardware:=false
 ```
-Start external_control program at teach pendant
+Start external_control program at teach pendant.
+
 In another terminal:
 ```bash
 ros2 run ur_robotiq_demo ur_with_gripper_demo
